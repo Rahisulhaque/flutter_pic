@@ -7,13 +7,19 @@ class App extends StatefulWidget{
   }
 }
 class AppState extends State<App>{
+  int counter = 0; 
   Widget build(context){
     return MaterialApp(
     home: Scaffold(
+
+      body: Text('$counter'),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: Icon(Icons.add), 
         onPressed: (){
-          print("Hello there");
+          
+          setState(() {
+            counter += 1;
+          });
         },
       ),
       appBar: AppBar( title: Text("Picture App"),
